@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AETOS Timepieces - Precision in Simplicity. Discover minimalist, high-quality timepieces designed for the modern individual.">
+    <title>AETOS Timepieces - Precision in Simplicity</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Welcome Popup Dialog -->
+    <dialog id="welcome-dialog" class="welcome-popup" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
+        <div class="dialog-content">
+            <button class="dialog-close" aria-label="Close dialog" type="button">&times;</button>
+            <h2 id="dialog-title">Welcome to AETOS</h2>
+            <p id="dialog-desc">Get 20% off your first order when you sign up for our newsletter</p>
+            <form id="welcome-form" class="welcome-form">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="firstName" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="birthday">Birthday (Optional)</label>
+                    <input type="date" id="birthday" name="birthday" aria-describedby="birthday-hint">
+                    <span id="birthday-hint" class="form-hint">Get special offers on your birthday</span>
+                </div>
+                <button type="submit" class="btn btn-primary">Get My 20% Off</button>
+            </form>
+            <div class="success-message" role="alert" aria-live="polite" hidden>
+                <p>Thank you for subscribing! Check your email for your discount code.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Global Header -->
+    <header class="global-header" role="banner">
+        <div class="header-container">
+            <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navigation-menu">
+                <span class="hamburger"></span>
+            </button>
+            
+            <a href="/" class="logo" aria-label="AETOS Timepieces - Home">
+                <svg class="logo-svg" viewBox="0 0 200 40" aria-hidden="true">
+                    <text x="0" y="30" font-family="Inter" font-weight="600" font-size="24">AETOS</text>
+                </svg>
+            </a>
+
+            <nav id="navigation-menu" class="main-nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="nav-item has-submenu">
+                        <button class="nav-link" aria-expanded="false" aria-haspopup="true">
+                            Watches
+                            <svg class="chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true">
+                                <path d="M1 1l5 5 5-5" stroke="currentColor" fill="none"/>
+                            </svg>
+                        </button>
+                        <div class="mega-menu" role="group">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-section">
+                                    <a href="/watches" class="mega-menu-header">Shop All Watches</a>
+                                    <h3 class="mega-menu-title">Collections</h3>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="/collections/vanguard">The Vanguard Chronograph</a></li>
+                                        <li><a href="/collections/sentinel">The Sentinel Automatic</a></li>
+                                        <li><a href="/collections/shoreline">The Shoreline Diver</a></li>
+                                        <li><a href="/collections/minimalist">The Minimalist 36</a></li>
+                                    </ul>
+                                    <a href="/new-arrivals" class="mega-menu-link">New Arrivals</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <button class="nav-link" aria-expanded="false" aria-haspopup="true">
+                            Straps
+                            <svg class="chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true">
+                                <path d="M1 1l5 5 5-5" stroke="currentColor" fill="none"/>
+                            </svg>
+                        </button>
+                        <div class="mega-menu" role="group">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-section">
+                                    <a href="/straps" class="mega-menu-header">Shop All Straps</a>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="/straps/leather">Leather Straps</a></li>
+                                        <li><a href="/straps/steel">Steel Bracelets</a></li>
+                                        <li><a href="/straps/nylon">Nylon Straps</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <button class="nav-link" aria-expanded="false" aria-haspopup="true">
+                            Accessories
+                            <svg class="chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true">
+                                <path d="M1 1l5 5 5-5" stroke="currentColor" fill="none"/>
+                            </svg>
+                        </button>
+                        <div class="mega-menu" role="group">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-section">
+                                    <a href="/accessories" class="mega-menu-header">Shop All Accessories</a>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="/accessories/storage">Watch Rolls & Cases</a></li>
+                                        <li><a href="/accessories/tools">Strap Tools</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/our-story" class="nav-link">Our Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/journal" class="nav-link">Journal</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Predictive Search -->
+            <div class="search-container" role="search">
+                <div class="search-wrapper">
+                    <label for="search-input" class="visually-hidden">Search products</label>
+                    <input 
+                        type="search" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="Search..." 
+                        aria-autocomplete="list"
+                        aria-controls="search-results"
+                        aria-expanded="false"
+                        role="combobox"
+                    >
+                    <button type="button" class="search-button" aria-label="Submit search">
+                        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                            <circle cx="8" cy="8" r="6" stroke="currentColor" fill="none" stroke-width="2"/>
+                            <path d="M13 13l5 5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+                <div id="search-results" class="search-results" role="listbox" hidden></div>
+            </div>
+
+            <!-- User Actions -->
+            <div class="user-actions">
+                <a href="/account" class="action-link" aria-label="My Account">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                        <path d="M4 20c0-4 4-7 8-7s8 3 8 7" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                    </svg>
+                </a>
+                <a href="/wishlist" class="action-link" aria-label="Wishlist">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                    </svg>
+                </a>
+                <a href="/cart" class="action-link" aria-label="Shopping Cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M7 13h10m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                    </svg>
+                    <span class="cart-count" aria-label="0 items in cart">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading">Precision in Simplicity.</h1>
+                <p class="hero-subtitle">Discover timepieces designed for the modern individual.</p>
+                <a href="/collections" class="btn btn-primary btn-large">Shop The Collection</a>
+            </div>
+            <picture class="hero-image">
+                <source media="(max-width: 768px)" srcset="https://via.placeholder.com/768x600/2c3e50/ffffff?text=AETOS+Watch">
+                <source media="(max-width: 1200px)" srcset="https://via.placeholder.com/1200x600/2c3e50/ffffff?text=AETOS+Watch">
+                <img src="https://via.placeholder.com/1920x800/2c3e50/ffffff?text=AETOS+Watch" alt="AETOS watch on wrist" loading="eager">
+            </picture>
+        </section>
+
+        <!-- Featured Categories Carousel -->
+        <section class="featured-categories" aria-labelledby="categories-heading">
+            <div class="container">
+                <h2 id="categories-heading">Explore Our Collections</h2>
+                <div class="carousel-container" role="region" aria-label="Featured categories carousel">
+                    <button class="carousel-prev" aria-label="Previous categories" type="button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-track categories-track" role="list">
+                        <div class="carousel-item category-item" role="listitem">
+                            <a href="/collections/vanguard" class="category-link">
+                                <img src="https://via.placeholder.com/300x400/34495e/ffffff?text=Vanguard" alt="" loading="lazy">
+                                <h3>The Vanguard Chronograph</h3>
+                            </a>
+                        </div>
+                        <div class="carousel-item category-item" role="listitem">
+                            <a href="/collections/sentinel" class="category-link">
+                                <img src="https://via.placeholder.com/300x400/34495e/ffffff?text=Sentinel" alt="" loading="lazy">
+                                <h3>The Sentinel Automatic</h3>
+                            </a>
+                        </div>
+                        <div class="carousel-item category-item" role="listitem">
+                            <a href="/collections/shoreline" class="category-link">
+                                <img src="https://via.placeholder.com/300x400/34495e/ffffff?text=Shoreline" alt="" loading="lazy">
+                                <h3>The Shoreline Diver</h3>
+                            </a>
+                        </div>
+                        <div class="carousel-item category-item" role="listitem">
+                            <a href="/straps/leather" class="category-link">
+                                <img src="https://via.placeholder.com/300x400/34495e/ffffff?text=Leather+Straps" alt="" loading="lazy">
+                                <h3>Premium Leather Straps</h3>
+                            </a>
+                        </div>
+                        <div class="carousel-item category-item" role="listitem">
+                            <a href="/accessories/storage" class="category-link">
+                                <img src="https://via.placeholder.com/300x400/34495e/ffffff?text=Storage" alt="" loading="lazy">
+                                <h3>Travel & Storage</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="carousel-next" aria-label="Next categories" type="button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Carousel -->
+        <section class="featured-products" aria-labelledby="products-heading">
+            <div class="container">
+                <h2 id="products-heading">Featured Products</h2>
+                <div class="carousel-container" role="region" aria-label="Featured products carousel">
+                    <button class="carousel-prev products-prev" aria-label="Previous products" type="button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-track products-track" role="list">
+                        <!-- Products will be dynamically loaded here -->
+                    </div>
+                    <button class="carousel-next products-next" aria-label="Next products" type="button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" fill="none" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Statement -->
+        <section class="brand-statement" aria-labelledby="brand-heading">
+            <div class="container">
+                <h2 id="brand-heading">Engineered for Life.</h2>
+                <p>We use only the finest materials—from 316L stainless steel to sapphire crystal—to build watches that last a lifetime.</p>
+                <a href="/craftsmanship" class="btn btn-secondary">Our Craftsmanship</a>
+            </div>
+        </section>
+
+        <!-- Journal Snippets -->
+        <section class="journal-snippets" aria-labelledby="journal-heading">
+            <div class="container">
+                <h2 id="journal-heading">From Our Journal</h2>
+                <div class="journal-grid" role="list">
+                    <!-- Journal articles will be dynamically loaded here -->
+                </div>
+                <button class="btn btn-outline load-more" type="button" aria-label="Load more articles">
+                    Load More
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="global-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="/watches">Watches</a></li>
+                        <li><a href="/straps">Straps</a></li>
+                        <li><a href="/accessories">Accessories</a></li>
+                        <li><a href="/new-arrivals">New Arrivals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/shipping">Shipping & Returns</a></li>
+                        <li><a href="/warranty">Warranty</a></li>
+                        <li><a href="/sizing">Sizing Guide</a></li>
+                        <li><a href="/care">Care Instructions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/our-story">Our Story</a></li>
+                        <li><a href="/journal">Journal</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Stay Connected</h3>
+                    <form class="newsletter-form" id="footer-newsletter">
+                        <label for="footer-email">Subscribe to our newsletter</label>
+                        <div class="newsletter-input-group">
+                            <input type="email" id="footer-email" name="email" placeholder="Your email" required aria-required="true">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                    </form>
+                    <div class="social-links">
+                        <a href="#" aria-label="Follow us on Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                                <circle cx="18" cy="6" r="1" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Follow us on Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Follow us on Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="currentColor" fill="none" stroke-width="1.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AETOS Timepieces. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                    <a href="/accessibility">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
