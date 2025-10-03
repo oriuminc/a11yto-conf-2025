@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETOS Timepieces - Luxury Swiss Watches</title>
+    <meta name="description" content="Discover AETOS Timepieces - Handcrafted Swiss luxury watches combining traditional craftsmanship with modern design.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     Skip Links 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-nav" class="skip-link">Skip to navigation</a>
+
+     Welcome Popup Dialog 
+    <div id="welcome-popup" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+        <div class="popup-content">
+            <button class="popup-close" aria-label="Close popup">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h2 id="popup-title">Welcome to AETOS</h2>
+            <p>Join our exclusive community and receive 10% off your first timepiece.</p>
+            <form id="popup-form" novalidate>
+                <div class="form-group">
+                    <label for="popup-email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="popup-email" 
+                        name="email" 
+                        required 
+                        aria-required="true"
+                        aria-describedby="popup-email-error"
+                    >
+                    <span id="popup-email-error" class="error-message" role="alert" aria-live="assertive"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Get My Discount</button>
+            </form>
+        </div>
+    </div>
+
+     Global Header 
+    <header class="global-header">
+        <div class="header-container">
+            <a href="/" class="logo" aria-label="AETOS Timepieces - Home">
+                <span class="logo-text">AETOS</span>
+            </a>
+
+             Mobile Menu Toggle 
+            <button 
+                class="mobile-menu-toggle" 
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+             Main Navigation 
+            <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list" role="menubar">
+                    <li role="none">
+                        <button 
+                            class="nav-link mega-menu-trigger" 
+                            aria-expanded="false" 
+                            aria-haspopup="true"
+                            aria-controls="collections-menu"
+                            role="menuitem"
+                        >
+                            Collections
+                        </button>
+                         Mega Menu 
+                        <div id="collections-menu" class="mega-menu" role="menu" aria-label="Collections submenu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3 id="automatic-heading">Automatic</h3>
+                                    <ul aria-labelledby="automatic-heading">
+                                        <li role="none"><a href="/collections/classic-automatic" role="menuitem">Classic Automatic</a></li>
+                                        <li role="none"><a href="/collections/sport-automatic" role="menuitem">Sport Automatic</a></li>
+                                        <li role="none"><a href="/collections/dress-automatic" role="menuitem">Dress Automatic</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3 id="chronograph-heading">Chronograph</h3>
+                                    <ul aria-labelledby="chronograph-heading">
+                                        <li role="none"><a href="/collections/racing-chronograph" role="menuitem">Racing Chronograph</a></li>
+                                        <li role="none"><a href="/collections/aviation-chronograph" role="menuitem">Aviation Chronograph</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3 id="limited-heading">Limited Editions</h3>
+                                    <ul aria-labelledby="limited-heading">
+                                        <li role="none"><a href="/collections/heritage-series" role="menuitem">Heritage Series</a></li>
+                                        <li role="none"><a href="/collections/anniversary-edition" role="menuitem">Anniversary Edition</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li role="none"><a href="/craftsmanship" class="nav-link" role="menuitem">Craftsmanship</a></li>
+                    <li role="none"><a href="/about" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="/journal" class="nav-link" role="menuitem">Journal</a></li>
+                </ul>
+            </nav>
+
+             Search, Account, Wishlist, Cart 
+            <div class="header-actions">
+                <div class="search-container">
+                    <label for="search-input" class="visually-hidden">Search products</label>
+                    <input 
+                        type="search" 
+                        id="search-input" 
+                        placeholder="Search..." 
+                        role="combobox"
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-controls="search-results"
+                        aria-label="Search products"
+                    >
+                    <ul id="search-results" class="search-results" role="listbox" aria-label="Search suggestions"></ul>
+                </div>
+                <a href="/account" class="icon-link" aria-label="My Account">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+                <a href="/wishlist" class="icon-link" aria-label="Wishlist">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </a>
+                <a href="/cart" class="icon-link" aria-label="Shopping cart, 0 items">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+     Main Content 
+    <main id="main-content">
+         Hero Section 
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading">Timeless Precision, Modern Elegance</h1>
+                <p class="hero-subtitle">Handcrafted Swiss timepieces for the discerning collector</p>
+                <a href="/collections" class="btn btn-primary btn-large">Shop The Collection</a>
+            </div>
+            <div class="hero-image">
+                <img src="/placeholder.svg?height=800&width=1600" alt="Close-up of AETOS luxury automatic watch with visible movement">
+            </div>
+        </section>
+
+         Featured Categories Carousel 
+        <section class="carousel-section" aria-labelledby="categories-heading">
+            <div class="section-header">
+                <h2 id="categories-heading">Explore Our Collections</h2>
+                <div class="carousel-controls" role="group" aria-label="Carousel controls">
+                    <button class="carousel-btn carousel-pause" aria-label="Pause automatic scrolling" data-carousel="categories">
+                        <span aria-hidden="true">⏸</span>
+                    </button>
+                    <button class="carousel-btn carousel-prev" aria-label="Previous category" data-carousel="categories">
+                        <span aria-hidden="true">‹</span>
+                    </button>
+                    <button class="carousel-btn carousel-next" aria-label="Next category" data-carousel="categories">
+                        <span aria-hidden="true">›</span>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel" role="region" aria-label="Featured categories carousel" data-carousel-id="categories">
+                <div class="carousel-track">
+                    <article class="category-card">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Automatic watch with visible mechanical movement">
+                        <div class="category-content">
+                            <h3>Automatic</h3>
+                            <p>Self-winding mechanical masterpieces</p>
+                            <a href="/collections/automatic" class="btn btn-secondary">Explore Automatic</a>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Chronograph watch with multiple subdials">
+                        <div class="category-content">
+                            <h3>Chronograph</h3>
+                            <p>Precision timing for the modern era</p>
+                            <a href="/collections/chronograph" class="btn btn-secondary">Explore Chronograph</a>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Elegant dress watch with leather strap">
+                        <div class="category-content">
+                            <h3>Dress</h3>
+                            <p>Refined elegance for every occasion</p>
+                            <a href="/collections/dress" class="btn btn-secondary">Explore Dress</a>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Sport diving watch with rotating bezel">
+                        <div class="category-content">
+                            <h3>Sport</h3>
+                            <p>Built for adventure and performance</p>
+                            <a href="/collections/sport" class="btn btn-secondary">Explore Sport</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="carousel-status" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+        </section>
+
+         Featured Products Carousel 
+        <section class="carousel-section products-section" aria-labelledby="products-heading">
+            <div class="section-header">
+                <h2 id="products-heading">Featured Timepieces</h2>
+                <div class="carousel-controls" role="group" aria-label="Carousel controls">
+                    <button class="carousel-btn carousel-pause" aria-label="Pause automatic scrolling" data-carousel="products">
+                        <span aria-hidden="true">⏸</span>
+                    </button>
+                    <button class="carousel-btn carousel-prev" aria-label="Previous product" data-carousel="products">
+                        <span aria-hidden="true">‹</span>
+                    </button>
+                    <button class="carousel-btn carousel-next" aria-label="Next product" data-carousel="products">
+                        <span aria-hidden="true">›</span>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel" role="region" aria-label="Featured products carousel" data-carousel-id="products">
+                <div class="carousel-track">
+                    <article class="product-card">
+                        <img src="/placeholder.svg?height=400&width=400" alt="AETOS Heritage Automatic watch with silver dial and leather strap">
+                        <div class="product-content">
+                            <h3>Heritage Automatic</h3>
+                            <p class="product-price" aria-label="Price: 4,500 dollars">$4,500</p>
+                            <a href="/products/heritage-automatic" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="/placeholder.svg?height=400&width=400" alt="AETOS Racing Chronograph with black dial and steel bracelet">
+                        <div class="product-content">
+                            <h3>Racing Chronograph</h3>
+                            <p class="product-price" aria-label="Price: 6,200 dollars">$6,200</p>
+                            <a href="/products/racing-chronograph" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="/placeholder.svg?height=400&width=400" alt="AETOS Classic Dress watch with gold case and white dial">
+                        <div class="product-content">
+                            <h3>Classic Dress</h3>
+                            <p class="product-price" aria-label="Price: 5,800 dollars">$5,800</p>
+                            <a href="/products/classic-dress" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <img src="/placeholder.svg?height=400&width=400" alt="AETOS Ocean Sport watch with blue dial and diving bezel">
+                        <div class="product-content">
+                            <h3>Ocean Sport</h3>
+                            <p class="product-price" aria-label="Price: 5,200 dollars">$5,200</p>
+                            <a href="/products/ocean-sport" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="carousel-status" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+        </section>
+
+         Brand Statement 
+        <section class="brand-statement" aria-labelledby="brand-heading">
+            <div class="brand-content">
+                <h2 id="brand-heading">Swiss Precision, Timeless Design</h2>
+                <p>Every AETOS timepiece is meticulously crafted by master watchmakers in our Swiss atelier. We combine centuries-old techniques with modern innovation to create watches that transcend time.</p>
+                <a href="/craftsmanship" class="btn btn-outline">Our Craftsmanship</a>
+            </div>
+        </section>
+
+         Journal Snippets 
+        <section class="journal-section" aria-labelledby="journal-heading">
+            <h2 id="journal-heading">The AETOS Journal</h2>
+            <div class="journal-grid" id="journal-grid">
+                <article class="journal-card">
+                    <img src="/placeholder.svg?height=300&width=500" alt="Close-up of intricate watch movement gears">
+                    <div class="journal-content">
+                        <h3>Understanding Automatic Movements</h3>
+                        <p class="journal-meta">
+                            <span class="journal-author">By Marcus Chen</span>
+                            <time datetime="2024-01-15">January 15, 2024</time>
+                        </p>
+                        <p class="journal-excerpt">Discover the fascinating mechanics behind self-winding watches and why they remain the pinnacle of horological craftsmanship.</p>
+                        <a href="/journal/automatic-movements" class="journal-link">Read more about automatic movements</a>
+                    </div>
+                </article>
+                <article class="journal-card">
+                    <img src="/placeholder.svg?height=300&width=500" alt="Master watchmaker assembling a timepiece">
+                    <div class="journal-content">
+                        <h3>A Day in Our Swiss Atelier</h3>
+                        <p class="journal-meta">
+                            <span class="journal-author">By Sophie Laurent</span>
+                            <time datetime="2024-01-10">January 10, 2024</time>
+                        </p>
+                        <p class="journal-excerpt">Step inside our workshop and witness the dedication and precision that goes into creating each AETOS timepiece.</p>
+                        <a href="/journal/swiss-atelier" class="journal-link">Read more about our atelier</a>
+                    </div>
+                </article>
+                <article class="journal-card">
+                    <img src="/placeholder.svg?height=300&width=500" alt="Collection of vintage watches displayed elegantly">
+                    <div class="journal-content">
+                        <h3>Caring for Your Timepiece</h3>
+                        <p class="journal-meta">
+                            <span class="journal-author">By David Morrison</span>
+                            <time datetime="2024-01-05">January 5, 2024</time>
+                        </p>
+                        <p class="journal-excerpt">Essential maintenance tips to ensure your AETOS watch remains in pristine condition for generations to come.</p>
+                        <a href="/journal/watch-care" class="journal-link">Read more about watch care</a>
+                    </div>
+                </article>
+            </div>
+            <div class="journal-load-more">
+                <button class="btn btn-secondary" id="load-more-journal">Load More Articles</button>
+            </div>
+            <div aria-live="polite" aria-atomic="true" class="visually-hidden" id="journal-announcement"></div>
+        </section>
+    </main>
+
+     Global Footer 
+    <footer class="global-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Collections</h3>
+                    <nav aria-label="Collections footer navigation">
+                        <ul>
+                            <li><a href="/collections/automatic">Automatic</a></li>
+                            <li><a href="/collections/chronograph">Chronograph</a></li>
+                            <li><a href="/collections/dress">Dress</a></li>
+                            <li><a href="/collections/sport">Sport</a></li>
+                            <li><a href="/collections/limited">Limited Editions</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <nav aria-label="Company footer navigation">
+                        <ul>
+                            <li><a href="/about">About AETOS</a></li>
+                            <li><a href="/craftsmanship">Craftsmanship</a></li>
+                            <li><a href="/sustainability">Sustainability</a></li>
+                            <li><a href="/careers">Careers</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <nav aria-label="Support footer navigation">
+                        <ul>
+                            <li><a href="/warranty">Warranty</a></li>
+                            <li><a href="/service">Service & Repair</a></li>
+                            <li><a href="/shipping">Shipping</a></li>
+                            <li><a href="/returns">Returns</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-column footer-newsletter">
+                    <h3>Stay Connected</h3>
+                    <p>Subscribe to receive updates on new releases and exclusive offers.</p>
+                    <form id="newsletter-form" novalidate>
+                        <div class="form-group">
+                            <label for="newsletter-email" class="visually-hidden">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="newsletter-email" 
+                                name="email" 
+                                placeholder="Your email"
+                                required 
+                                aria-required="true"
+                                aria-describedby="newsletter-error"
+                            >
+                            <span id="newsletter-error" class="error-message" role="alert" aria-live="assertive"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="https://instagram.com/aetos" aria-label="Visit our Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="#fff" stroke-width="2"></path>
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="#fff"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/aetos" aria-label="Visit our Facebook" target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/aetos" aria-label="Visit our Twitter" target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AETOS Timepieces. All rights reserved.</p>
+                <nav aria-label="Legal footer navigation">
+                    <ul class="footer-legal">
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/accessibility">Accessibility</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
