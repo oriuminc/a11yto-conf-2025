@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AETOS Timepieces – Precision in Simplicity.</title>
+  <meta name="description" content="AETOS Timepieces – Minimalist, high‑quality watches engineered for life." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Skip Link -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Welcome Popup Dialog -->
+  <dialog id="welcomeDialog" aria-labelledby="welcomeTitle">
+    <form id="welcomeForm" method="dialog" novalidate>
+      <header class="dialog-header">
+        <h2 id="welcomeTitle">Welcome to AETOS</h2>
+        <button type="button" class="close-btn" aria-label="Close popup" data-close-dialog>&times;</button>
+      </header>
+      <p class="dialog-intro">Get <strong>20% off</strong> your first order. Sign up below.</p>
+      <div class="form-field">
+        <label for="firstName">First Name</label>
+        <input id="firstName" name="firstName" autocomplete="given-name" required />
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="form-field">
+        <label for="birthday">Birthday</label>
+        <input id="birthday" name="birthday" type="date" />
+      </div>
+      <div class="form-actions">
+        <button type="submit">Claim 20% Off</button>
+      </div>
+      <p id="welcomeSuccess" class="success-msg" role="status" aria-live="polite" hidden>Thank you! Check your inbox for the code.</p>
+      <p id="welcomeError" class="error-msg" role="alert" aria-live="assertive" hidden>Please fix the errors above.</p>
+    </form>
+  </dialog>
+
+  <!-- Global Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="branding">
+      <a href="#" class="logo" aria-label="AETOS Timepieces home">AETOS</a>
+    </div>
+    <button id="menuToggle" class="menu-toggle" aria-controls="primaryNav" aria-expanded="false">Menu</button>
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary">
+      <ul class="top-level">
+        <li>
+          <button class="expand" aria-expanded="false" aria-controls="menu-watches">Watches</button>
+          <ul id="menu-watches" hidden>
+            <li><a href="#watches-all">Shop All Watches</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#vanguard">The Vanguard Chronograph</a></li>
+            <li><a href="#sentinel">The Sentinel Automatic</a></li>
+            <li><a href="#shoreline">The Shoreline Diver</a></li>
+            <li><a href="#minimalist">The Minimalist 36</a></li>
+            <li><a href="#new">New Arrivals</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="expand" aria-expanded="false" aria-controls="menu-straps">Straps</button>
+          <ul id="menu-straps" hidden>
+            <li><a href="#straps-all">Shop All Straps</a></li>
+            <li><a href="#leather">Leather Straps</a></li>
+            <li><a href="#steel">Steel Bracelets</a></li>
+            <li><a href="#nylon">Nylon Straps</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="expand" aria-expanded="false" aria-controls="menu-accessories">Accessories</button>
+          <ul id="menu-accessories" hidden>
+            <li><a href="#acc-all">Shop All Accessories</a></li>
+            <li><a href="#rolls">Watch Rolls &amp; Cases</a></li>
+            <li><a href="#tools">Strap Tools</a></li>
+          </ul>
+        </li>
+        <li><a href="#our-story">Our Story</a></li>
+        <li><a href="#journal">Journal</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-wrapper">
+      <label for="searchInput">Search</label>
+      <input id="searchInput" type="search" name="q" list="searchSuggestions" aria-describedby="searchStatus" autocomplete="off" />
+      <datalist id="searchSuggestions"></datalist>
+      <p id="searchStatus" class="visually-hidden" aria-live="polite"></p>
+    </div>
+
+    <ul class="user-actions">
+      <li><a href="#account">Account</a></li>
+      <li><a href="#wishlist">Wishlist</a></li>
+      <li><a href="#cart">Cart</a></li>
+    </ul>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="heroHeading">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 id="heroHeading">Precision in Simplicity.</h1>
+        <p class="subhead">Discover timepieces designed for the modern individual.</p>
+        <p><a class="btn primary" href="#featured-products">Shop The Collection</a></p>
+      </div>
+    </section>
+
+    <!-- Featured Categories Carousel -->
+    <section class="carousel-section" aria-labelledby="catHeading">
+      <header class="section-header">
+        <h2 id="catHeading">Explore Categories</h2>
+        <div class="carousel-controls">
+          <button class="carousel-prev" data-target="categories" aria-label="Scroll categories left">&#9664;</button>
+          <button class="carousel-next" data-target="categories" aria-label="Scroll categories right">&#9654;</button>
+        </div>
+      </header>
+      <div class="carousel" id="categories" tabindex="0" aria-label="Featured Categories">
+        <!-- Items injected by JS for simplicity -->
+      </div>
+    </section>
+
+    <!-- Featured Products Carousel -->
+    <section class="carousel-section" aria-labelledby="prodHeading" id="featured-products">
+      <header class="section-header">
+        <h2 id="prodHeading">Featured Products</h2>
+        <div class="carousel-controls">
+          <button class="carousel-prev" data-target="products" aria-label="Scroll products left">&#9664;</button>
+          <button class="carousel-next" data-target="products" aria-label="Scroll products right">&#9654;</button>
+        </div>
+      </header>
+      <div class="carousel" id="products" tabindex="0" aria-label="Featured Products">
+      </div>
+    </section>
+
+    <!-- Brand Statement -->
+    <section class="brand-statement" aria-labelledby="brandStatementHeading">
+      <div class="inner">
+        <h2 id="brandStatementHeading">Engineered for Life.</h2>
+        <p>We use only the finest materials—from 316L stainless steel to sapphire crystal—to build watches that last a lifetime.</p>
+        <p><a class="btn secondary" href="#craftsmanship">Our Craftsmanship</a></p>
+      </div>
+    </section>
+
+    <!-- Journal Snippets -->
+    <section class="journal" aria-labelledby="journalHeading" id="journal">
+      <h2 id="journalHeading">From the Journal</h2>
+      <div id="journalGrid" class="journal-grid" aria-live="polite"></div>
+      <p class="center"><button id="loadMoreArticles" class="btn" aria-controls="journalGrid" aria-live="off">Load More Articles</button></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" aria-labelledby="footerHeading">
+    <h2 id="footerHeading" class="visually-hidden">Footer</h2>
+    <div class="footer-columns">
+      <section aria-labelledby="shopHeading">
+        <h3 id="shopHeading">Shop</h3>
+        <ul>
+          <li><a href="#watches-all">Watches</a></li>
+          <li><a href="#straps-all">Straps</a></li>
+          <li><a href="#acc-all">Accessories</a></li>
+        </ul>
+      </section>
+      <section aria-labelledby="supportHeading">
+        <h3 id="supportHeading">Support</h3>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#shipping">Shipping &amp; Returns</a></li>
+          <li><a href="#warranty">Warranty</a></li>
+        </ul>
+      </section>
+      <section aria-labelledby="contactHeading">
+        <h3 id="contactHeading">Contact</h3>
+        <ul>
+          <li><a href="#contact-form">Contact Form</a></li>
+          <li><a href="#instagram">Instagram</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+      </section>
+      <section aria-labelledby="newsletterHeading">
+        <h3 id="newsletterHeading">Stay Updated</h3>
+        <form id="newsletterForm" novalidate>
+          <div class="form-field">
+            <label for="newsletterEmail">Email</label>
+            <input id="newsletterEmail" name="newsletterEmail" type="email" required />
+          </div>
+          <button type="submit">Subscribe</button>
+          <p id="newsletterStatus" role="status" aria-live="polite" class="success-msg" hidden>Subscribed! Welcome.</p>
+          <p id="newsletterError" role="alert" aria-live="assertive" class="error-msg" hidden>Please enter a valid email.</p>
+        </form>
+      </section>
+    </div>
+    <p class="copyright">&copy; <span id="year"></span> AETOS Timepieces. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
